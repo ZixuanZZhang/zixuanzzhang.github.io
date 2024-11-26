@@ -1,5 +1,4 @@
 ---
-permalink: /teaching/
 title: "TA"
 collection: teaching
 author_profile: true
