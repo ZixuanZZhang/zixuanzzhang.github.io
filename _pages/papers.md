@@ -8,11 +8,11 @@ redirect_from:
 ---
 
 
-*[Nonparametric Classification on Low Dimensional Manifolds using Overparameterized Convolutional Residual Networks](https://arxiv.org/abs/2307.01649)
-  **Zixuan Zhang**^\*, Kaiqi Zhang^\*, Minshuo Chen, Yuma Takeda, Mengdi Wang, Tuo Zhao, Yu-Xiang Wang
+* [Nonparametric Classification on Low Dimensional Manifolds using Overparameterized Convolutional Residual Networks](https://arxiv.org/abs/2307.01649)
+  **Zixuan Zhang**\*, Kaiqi Zhang\*, Minshuo Chen, Yuma Takeda, Mengdi Wang, Tuo Zhao, Yu-Xiang Wang
   *Annual Conference on Neural Information Processing Systems (NeurIPS), 2024*
 
-*[Robust Reinforcement Learning from Corrupted Human Feedback](https://arxiv.org/abs/2406.15568)
+* [Robust Reinforcement Learning from Corrupted Human Feedback](https://arxiv.org/abs/2406.15568)
   Alexander Bukharin, Ilgee Hong, Haoming Jiang, Zichong Li, Qingru Zhang, **Zixuan Zhang**, Tuo Zhao
   *Annual Conference on Neural Information Processing Systems (NeurIPS), 2024*
 
