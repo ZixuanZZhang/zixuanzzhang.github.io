@@ -15,15 +15,15 @@ Preprints
 ====
 
 * [Diffusion Model for Manifold Data: Score Decomposition, Curvature and Statistical Complexity](Manuscript upon request)
-* **Zixuan Zhang**, Kaixuan Huang, Mengdi Wang, Tuo Zhao and Minshuo Chen.
+  **Zixuan Zhang**, Kaixuan Huang, Mengdi Wang, Tuo Zhao and Minshuo Chen.
 
-* [A Minimalist Example of Edge-of-Stability and Progressive Sharpening](https://arxiv.org/abs/2503.02809)
+* [A Minimalist Example of Edge-of-Stability and Progressive Sharpening](https://arxiv.org/abs/2503.02809)   
   Liming Liu, **Zixuan Zhang**, Simon Du, Tuo Zhao
 
-* [COSMOS: A Hybrid Adaptive Optimizer for Memory-Efficient Training of LLMs](https://arxiv.org/abs/2502.17410)
+* [COSMOS: A Hybrid Adaptive Optimizer for Memory-Efficient Training of LLMs](https://arxiv.org/abs/2502.17410) 
   Liming Liu, Zhenghao Xu, **Zixuan Zhang**, Hao Kang, Zichong Li, Chen Liang, Weizhu Chen, Tuo Zhao
 
-* [LLMs Can Generate a Better Answer by Aggregating Their Own Responses](https://arxiv.org/abs/2503.04104)
+* [LLMs Can Generate a Better Answer by Aggregating Their Own Responses](https://arxiv.org/abs/2503.04104)   
   Zichong Li, Xinyu Feng, Yuheng Cai, **Zixuan Zhang**, Tianyi Liu, Chen Liang, Weizhu Chen, Haoyu Wang, Tuo Zhao  
 
 Publications
