@@ -14,7 +14,7 @@ Before joining Georgia Tech, I earned a B.S. in Statistics from University of Sc
 Preprints
 ====
 
-* Diffusion Model for Manifold Data: Score Decomposition, Curvature and Statistical Complexity(Manuscript upon request)      
+* Diffusion Model for Manifold Data: Score Decomposition, Curvature and Statistical Complexity (Manuscript upon request)      
   **Zixuan Zhang**, Kaixuan Huang, Mengdi Wang, Tuo Zhao and Minshuo Chen.
 
 * [A Minimalist Example of Edge-of-Stability and Progressive Sharpening](https://arxiv.org/abs/2503.02809)   
