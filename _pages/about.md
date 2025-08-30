@@ -7,10 +7,24 @@ redirect_from:
   - /about.html
 ---
 
-I am a third-year PhD student in the H. Milton Stewart School of Industrial and Systems Engineering (ISyE) at Georgia Tech, advised by Prof. [Tuo Zhao](https://www2.isye.gatech.edu/~tzhao80/). My research focuses on deep learning theory. I am interested in function approximation and optimization theory of neural networks, as well as their statistical guarantees in learning applications. I am also interested in deep learning applications including large language models and diffusion models.
+I am a fourth-year PhD student in the H. Milton Stewart School of Industrial and Systems Engineering (ISyE) at Georgia Tech, advised by Prof. [Tuo Zhao](https://www2.isye.gatech.edu/~tzhao80/). My research focuses on developing principled methodologies and theoretical understanding in machine learning, especially deep learning.  I am interested in language models and diffusion models, with an emphasis on function approximation theory and statistical guarantees in learning applications.
 
 Before joining Georgia Tech, I earned a B.S. in Statistics from University of Science and Technology of China (USTC).
 
+Preprints
+====
+
+* [Diffusion Model for Manifold Data: Score Decomposition, Curvature and Statistical Complexity](Manuscript upon request)
+* **Zixuan Zhang**, Kaixuan Huang, Mengdi Wang, Tuo Zhao and Minshuo Chen.
+
+* [A Minimalist Example of Edge-of-Stability and Progressive Sharpening](https://arxiv.org/abs/2503.02809)
+  Liming Liu, **Zixuan Zhang**, Simon Du, Tuo Zhao
+
+* [COSMOS: A Hybrid Adaptive Optimizer for Memory-Efficient Training of LLMs](https://arxiv.org/abs/2502.17410)
+  Liming Liu, Zhenghao Xu, **Zixuan Zhang**, Hao Kang, Zichong Li, Chen Liang, Weizhu Chen, Tuo Zhao
+
+* [LLMs Can Generate a Better Answer by Aggregating Their Own Responses](https://arxiv.org/abs/2503.04104)
+  Zichong Li, Xinyu Feng, Yuheng Cai, **Zixuan Zhang**, Tianyi Liu, Chen Liang, Weizhu Chen, Haoyu Wang, Tuo Zhao  
 
 Publications
 ====
