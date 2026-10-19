@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zixuanzzhang.github.io/sitemap.xml
