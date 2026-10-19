@@ -472,14 +472,14 @@
 
         <article class="interest">
           <div class="viz-cell"><div class="viz">
-            <canvas id="viz-sec" class="drag" role="img" aria-label="Illustration: the compute an attacker recovers stays near a floor set by retraining alone, climbs steadily as the egress limit grows, then saturates. Models pretrained longer give up less per byte."></canvas>
-            <div class="viz-hud"><span class="viz-title">Recovered compute vs. egress limit</span><span>Drag ↔</span></div>
+            <canvas id="viz-sec" class="drag" role="img" aria-label="Illustration: the model capability an attacker can steal stays low at tight egress limits, climbs steadily as the limit loosens, then saturates. Models pretrained longer give up less per byte."></canvas>
+            <div class="viz-hud"><span class="viz-title">Exfiltration scaling law</span><span>Drag ↔</span></div>
             <div class="viz-foot">
               <span class="legend">
                 <span>Pretraining</span>
-                <span class="lg l0">20</span>
-                <span class="lg l1">160</span>
-                <span class="lg l2">1280 tok/param</span>
+                <span class="lg l0">short</span>
+                <span class="lg l1">medium</span>
+                <span class="lg l2">long</span>
               </span>
             </div>
           </div></div>
@@ -1036,7 +1036,7 @@
         for (var g = 1; g < 4; g++) { var gy = Math.round(T + (g / 4) * ph) + 0.5; c.moveTo(L, gy); c.lineTo(L + pw, gy); }
         c.stroke(); c.setLineDash([]);
         c.beginPath(); c.moveTo(L + 0.5, T - 6); c.lineTo(L + 0.5, Math.round(T + ph) + 0.5); c.lineTo(L + pw + 4, Math.round(T + ph) + 0.5); c.stroke();
-        label(c, "Retained compute ↑", L + 6, T - 9);
+        label(c, "Capability stolen ↑", L + 6, T - 9);
         label(c, "Egress limit →", L + pw, T + ph + 14, "right");
 
         // soft fills under each curve, then the curves
