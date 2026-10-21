@@ -200,11 +200,11 @@
   .body { min-width: 0; }
 
   /* research cards + figures */
-  /* Research directions as a 2x2 grid of cards: a 4:3 live figure (titled inside) on top, text below. */
-  .interests { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-  .interest { display: flex; flex-direction: column; border: 1px solid var(--rule); border-radius: 14px; background: var(--bg-elev); overflow: hidden; }
-  .viz-cell { display: grid; justify-items: center; background: var(--bg); border-bottom: 1px solid var(--rule); }
-  .viz { position: relative; width: 100%; aspect-ratio: 4 / 3; }
+  /* Research directions as one column of strips: a 16:10 live figure (titled inside) on the left, text and links on the right. */
+  .interests { display: flex; flex-direction: column; gap: 16px; }
+  .interest { display: grid; grid-template-columns: 44% minmax(0, 1fr); border: 1px solid var(--rule); border-radius: 14px; background: var(--bg-elev); overflow: hidden; }
+  .viz-cell { display: grid; align-items: center; background: var(--bg); border-right: 1px solid var(--rule); }
+  .viz { position: relative; width: 100%; aspect-ratio: 16 / 10; }
   .viz-title { font-size: 11.5px; font-weight: 500; color: var(--ink-2); }
   .viz canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
   .viz canvas.drag { cursor: ew-resize; touch-action: pan-y; }
@@ -223,15 +223,18 @@
   .lg::before { content: ""; display: inline-block; width: 12px; height: 2px; margin-right: 5px; vertical-align: middle; border-radius: 1px; background: var(--accent); }
   .lg.l0::before { opacity: .35; }
   .lg.l1::before { opacity: .65; }
-  .interest-body { display: flex; flex-direction: column; flex: 1; min-width: 0; padding: 18px 20px 20px; }
+  .interest-body { display: flex; flex-direction: column; min-width: 0; padding: 20px 24px; }
   .interest .k { display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 11.5px; color: var(--accent); margin-bottom: 8px; }
   .interest .k .i { width: 15px; height: 15px; vertical-align: 0; }
   .interest h3 { font-size: 19px; font-weight: 600; line-height: 1.3; margin: 0 0 4px; letter-spacing: -0.01em; }
   .interest p { font-size: 15.5px; line-height: 1.5; color: var(--ink-2); margin: 0; }
   .interest p.cap { font-family: var(--mono); font-size: 11px; line-height: 1.6; color: var(--muted); margin-top: 12px; }
   .cap b { color: var(--ink-2); font-weight: 500; }
-  .more { margin-top: auto; padding-top: 14px; font-family: var(--mono); font-size: 12px; color: var(--accent); align-self: flex-start; }
-  .more:hover { text-decoration: underline; text-underline-offset: 3px; }
+  /* Direct paper / code links at the foot of each card. */
+  .refs { margin-top: auto; padding-top: 14px; display: flex; flex-wrap: wrap; gap: 6px 16px; font-family: var(--mono); font-size: 12px; line-height: 1.5; }
+  .refs a { color: var(--accent); }
+  .refs a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .refs .note { color: var(--muted); }
 
   /* org badges */
   .logo {
@@ -243,23 +246,17 @@
   .logo.text { font-family: var(--mono); font-size: 10.5px; font-weight: 500; letter-spacing: -0.02em; }
 
   /* experience */
-  .xp { position: relative; display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 18px; padding-bottom: 36px; }
+  .xp { position: relative; display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 18px; padding-bottom: 28px; }
   .xp:last-child { padding-bottom: 0; }
   .xp::before { content: ""; position: absolute; left: 18px; top: 44px; bottom: 8px; width: 1px; background: var(--rule); }
   .xp:last-child::before { display: none; }
   .xp.current .logo { border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
-  .xp-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; padding-top: 4px; }
+  .xp-head { display: flex; justify-content: space-between; align-items: baseline; gap: 4px 16px; flex-wrap: wrap; padding-top: 4px; margin-bottom: 8px; }
   .xp h3 { font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin: 0; }
   .date { font-family: var(--mono); font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
-  .xp-role { font-size: 15.5px; color: var(--muted); margin: 2px 0 10px; }
-  .xp-sum { font-size: 17px; font-style: italic; color: var(--ink); margin-bottom: 14px; }
-  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; margin: 0 0 14px; }
-  .stat { background: var(--bg-elev); padding: 12px 14px; }
-  .stat b { display: block; font-weight: 600; font-size: 24px; letter-spacing: -0.01em; font-variant-numeric: lining-nums tabular-nums; line-height: 1.2; }
-  .stat span { font-family: var(--mono); font-size: 11px; color: var(--muted); line-height: 1.4; display: block; margin-top: 2px; }
-  .xp ul { margin: 0; padding: 0; list-style: none; }
-  .xp li { position: relative; padding-left: 18px; font-size: 16px; line-height: 1.55; color: var(--ink-2); margin-bottom: 6px; }
-  .xp li::before { content: "–"; position: absolute; left: 0; color: var(--faint); }
+  .xp-role { font-size: 16px; font-weight: 400; letter-spacing: 0; color: var(--muted); }
+  .xp-role::before { content: "\00a0\00b7\0020"; }
+  .xp-sum { font-size: 16.5px; line-height: 1.55; color: var(--ink-2); margin: 0; }
   .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
   .tag { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 11.5px; color: var(--ink-2); border: 1px solid var(--rule); border-radius: 6px; padding: 3px 9px; background: var(--bg-elev); transition: color .15s, border-color .15s; }
   .tag .i { width: 13px; height: 13px; vertical-align: 0; }
@@ -275,7 +272,7 @@
   .filter[aria-pressed="true"] { color: var(--bg); background: var(--ink); border-color: var(--ink); }
   .filter .c { opacity: .55; margin-left: 4px; }
   .pubs { list-style: none; margin: 0; padding: 0; }
-  .pub { display: grid; grid-template-columns: 108px minmax(0, 1fr); gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--rule-soft); }
+  .pub { display: grid; grid-template-columns: 128px minmax(0, 1fr); gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--rule-soft); }
   .pub:last-child { border-bottom: 0; }
   .pub[hidden] { display: none; }
   .venue { display: inline-block; font-family: var(--mono); font-size: 11.5px; color: var(--ink-2); border: 1px solid var(--rule); border-radius: 6px; padding: 2px 7px; white-space: nowrap; margin-top: 3px; }
@@ -367,7 +364,8 @@
     section.row { padding: 44px 0; }
   }
   @media (max-width: 680px) {
-    .interests { grid-template-columns: 1fr; }
+    .interest { grid-template-columns: 1fr; }
+    .viz-cell { justify-items: center; border-right: 0; border-bottom: 1px solid var(--rule); }
     .viz { max-width: 440px; }
     .interest-body { padding: 16px 18px 18px; }
   }
@@ -380,7 +378,8 @@
     .edu .logo { grid-row: span 2; }
     .edu .when { grid-column: 2; padding-top: 0; }
     .xp { gap: 14px; }
-    .stat b { font-size: 20px; }
+    .xp-role { display: block; margin-top: 2px; }
+    .xp-role::before { content: none; }
     .lede { font-size: 17.5px; }
   }
   @media (prefers-reduced-motion: reduce) {
@@ -474,8 +473,7 @@
     <div>
       <h1>Zixuan Zhang</h1>
       <p class="tagline"><span class="tagline-role">Anthropic Research Fellow</span> · AI Security · Agentic RL · Learning Theory</p>
-      <p class="lede">I'm a final-year Ph.D. student in the H. Milton Stewart School of Industrial and Systems Engineering (ISyE) at Georgia Tech, advised by Prof. <a class="link" href="https://www2.isye.gatech.edu/~tzhao80/">Tuo Zhao</a>, and currently a Research Fellow in the Anthropic Fellows Program.</p>
-      <p class="lede">My research aims to make large-scale AI systems <em>reliable</em> and <em>interpretable</em>: quantitative threat models for AI safety and security; large-scale RL post-training for LLM agents, from environment infrastructure to training that stays efficient and stable over long horizons; and statistical and optimization theory of diffusion models and deep networks.</p>
+      <p class="lede">I'm a final-year Ph.D. student at Georgia Tech (ISyE), advised by Prof. <a class="link" href="https://www2.isye.gatech.edu/~tzhao80/">Tuo Zhao</a>, and a Research Fellow in the Anthropic Fellows Program. My research aims to make large-scale AI systems <em>reliable</em> and <em>interpretable</em>: quantitative threat models for AI safety and security, RL post-training for LLM agents from environment infrastructure to stable long-horizon training, and theory of diffusion models and deep networks.</p>
       <div class="links">
         <a class="chip-link primary" href="mailto:zzhang3105@gatech.edu"><svg class="i"><use href="#i-mail"/></svg>Email</a>
         <a class="chip-link" href="https://scholar.google.com/citations?user=ZdfbAOMAAAAJ&amp;hl=en"><svg class="i"><use href="#i-scholar"/></svg>Scholar</a>
@@ -508,8 +506,8 @@
           <div class="interest-body">
             <div class="k"><svg class="i"><use href="#i-shield"/></svg>Safety &amp; Security</div>
             <h3>Quantitative threat models</h3>
-            <p>Measuring how well safeguards hold up against realistic attacks, such as weight exfiltration under egress limits.</p>
-            <a class="more" href="#experience">Current project ↓</a>
+            <p>How much of a model can an attacker steal under an egress limit? Run 4k+ compress-then-retrain attacks on dense and MoE model ladders and fit scaling laws for the egress limit a lab needs.</p>
+            <div class="refs"><span class="note">Anthropic Fellows · paper in prep</span></div>
           </div>
         </article>
 
@@ -525,8 +523,8 @@
           <div class="interest-body">
             <div class="k"><svg class="i"><use href="#i-terminal"/></svg>Agents &amp; Environments</div>
             <h3>Environments for agents</h3>
-            <p>Environments, sandboxes, and rollout infra that keep LLM serving, agent rollouts, and training decoupled.</p>
-            <a class="more" href="https://github.com/strands-rl/strands-env">strands-env ↗</a>
+            <p>Contributed to strands-env, open-source agent infra, and built MCP, user-simulation and terminal-coding environments on a sandbox service, enabling 3k+ concurrent rollouts.</p>
+            <div class="refs"><a href="https://github.com/strands-rl/strands-env">strands-env · GitHub ↗</a></div>
           </div>
         </article>
 
@@ -541,8 +539,8 @@
           <div class="interest-body">
             <div class="k"><svg class="i"><use href="#i-loop"/></svg>RL &amp; Reward</div>
             <h3>Stable RL, robust rewards</h3>
-            <p>Long-horizon RL that stays stable, and reward and oversight signals that hold up under optimization.</p>
-            <a class="more" href="#publications" data-goto-filter="rl">Related papers ↓</a>
+            <p>Stable long-horizon agent RL on a 100B+ MoE base, rubric rewards beyond verifiable tasks, and reward learning robust to corrupted preference labels.</p>
+            <div class="refs"><a href="https://arxiv.org/abs/2609.29421">Rufus-Air · Tech report ’26 ↗</a><a href="https://arxiv.org/abs/2606.03968">QUBRIC · EMNLP ’26 ↗</a><a href="https://arxiv.org/abs/2406.15568">Robust RLHF · NeurIPS ’24 ↗</a></div>
           </div>
         </article>
 
@@ -554,8 +552,8 @@
           <div class="interest-body">
             <div class="k"><svg class="i"><use href="#i-sigma"/></svg>Theory</div>
             <h3>Guarantees for modern models</h3>
-            <p>Statistical and optimization guarantees for LLMs and diffusion models.</p>
-            <a class="more" href="#publications" data-goto-filter="theory">Related papers ↓</a>
+            <p>Statistical rates for diffusion models on manifolds and for masked discrete diffusion, sample complexity of deep networks set by intrinsic dimension, and a minimal model of edge-of-stability training.</p>
+            <div class="refs"><a href="https://arxiv.org/abs/2603.20645">Manifold diffusion · arXiv ’26 ↗</a><a href="https://arxiv.org/abs/2503.02809">EoS · NeurIPS ’25 ↗</a><a href="https://arxiv.org/abs/2306.14859">Minkowski dim. · ICML ’23 ↗</a></div>
           </div>
         </article>
 
@@ -571,37 +569,16 @@
       <div class="xp current">
         <div class="logo" title="Anthropic"><svg class="i"><use href="#i-anthropic"/></svg></div>
         <div>
-          <div class="xp-head"><h3>Anthropic Fellows Program</h3><span class="date">Aug 2026 – now</span></div>
-          <div class="xp-role">Research Fellow</div>
-          <p class="xp-sum">How well do egress limits protect model weights from exfiltration?</p>
-          <div class="stats">
-            <div class="stat"><b>3,000+</b><span>compress-then-retrain attacks</span></div>
-            <div class="stat"><b>dense + MoE</b><span>target model ladders</span></div>
-          </div>
-          <ul>
-            <li>Threat model: compute an attacker recovers under egress and retraining budgets.</li>
-            <li>Agent swarm that proposes and runs attacks in byte/FLOP-metered sandboxes.</li>
-            <li>Interpretable scaling laws for the required egress limit. Paper in prep.</li>
-          </ul>
+          <div class="xp-head"><h3>Anthropic Fellows Program<span class="xp-role">Research Fellow</span></h3><span class="date">Aug 2026 – now</span></div>
+          <p class="xp-sum">Quantifying how well egress limits protect model weights from exfiltration.</p>
         </div>
       </div>
 
       <div class="xp">
         <div class="logo" title="Amazon"><svg class="i"><use href="#i-amazon"/></svg></div>
         <div>
-          <div class="xp-head"><h3>Amazon · Stores Foundational AI (Rufus)</h3><span class="date">Jan – Jul 2026</span></div>
-          <div class="xp-role">Applied Scientist Intern</div>
-          <p class="xp-sum">Agent RL post-training on a 100B+ MoE base.</p>
-          <div class="stats">
-            <div class="stat"><b>3,000+</b><span>concurrent rollouts</span></div>
-            <div class="stat"><b>+7.8</b><span>MCP-Atlas</span></div>
-            <div class="stat"><b>+9.8</b><span>Tau2-Retail</span></div>
-          </div>
-          <ul>
-            <li>Led agent RL for tool use and terminal coding; decoupled rollouts via strands-env.</li>
-            <li>Steered recipe and infra from reward, rollout, and KL/entropy diagnostics.</li>
-            <li>Built MCP, user-sim, and terminal environments plus a sandbox service on AWS EKS.</li>
-          </ul>
+          <div class="xp-head"><h3>Amazon Stores Foundational AI (Rufus)<span class="xp-role">Applied Scientist Intern</span></h3><span class="date">Jan – Jul 2026</span></div>
+          <p class="xp-sum">Led agent RL post-training for tool use and terminal coding on a 100B+ MoE base.</p>
           <div class="tags">
             <a class="tag" href="https://arxiv.org/abs/2609.29421"><svg class="i"><use href="#i-arxiv"/></svg>Rufus-Air</a>
             <a class="tag" href="https://github.com/strands-rl/strands-env"><svg class="i"><use href="#i-github"/></svg>strands-env</a>
@@ -612,8 +589,7 @@
       <div class="xp">
         <div class="logo" title="Microsoft Research"><svg class="i ms"><use href="#i-microsoft"/></svg></div>
         <div>
-          <div class="xp-head"><h3>Microsoft Research</h3><span class="date">Jun 2024 – Jun 2025</span></div>
-          <div class="xp-role">Research Scientist Intern</div>
+          <div class="xp-head"><h3>Microsoft Research<span class="xp-role">Research Scientist Intern</span></h3><span class="date">Jun 2024 – Jun 2025</span></div>
           <p class="xp-sum">Memory-efficient LLM optimization and structured MoE compression.</p>
           <div class="tags">
             <a class="tag" href="https://arxiv.org/abs/2502.17410"><svg class="i"><use href="#i-arxiv"/></svg>COSMOS · ICLR 2026</a>
@@ -637,7 +613,7 @@
 
       <ul class="pubs" id="pubs">
         <li class="pub" data-tags="rl">
-          <div><span class="venue pre">arXiv 2026</span></div>
+          <div><span class="venue pre">Tech report 2026</span></div>
           <div>
             <a class="pub-title" href="https://arxiv.org/abs/2609.29421">Rufus-Air: An Open LLM Post-Training Recipe</a>
             <div class="authors">Chia-Yuan Chang, Renyuan Cheng, Rui Feng, Xiaotian Han, Yuan He, Hongye Jin, Linwei Li, Shiyang Li, Fenglin Liu, Xin Liu, Priyanka Nigam, Haoyang Wen, Zhenghao Xu, Zhuocheng Xu, Bing Yin, Qingyu Yin, Chao Zhang, Rongzhi Zhang, Zhihan Zhang, Zixuan Zhang, <span class="me">Zixuan Zhang</span>, Tuo Zhao (alphabetical order)</div>
@@ -927,13 +903,6 @@
     c.textContent = f === "all" ? pubs.length : pubs.filter(function (p) { return hasTag(p, f); }).length;
     btn.appendChild(c);
     btn.addEventListener("click", function () { applyFilter(f); });
-  });
-  Array.prototype.forEach.call(document.querySelectorAll("[data-goto-filter]"), function (a) {
-    a.addEventListener("click", function (e) {
-      e.preventDefault();
-      applyFilter(a.dataset.gotoFilter);
-      document.getElementById("publications").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
-    });
   });
 
   /* ---------- figure plumbing ---------- */
